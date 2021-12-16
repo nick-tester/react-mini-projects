@@ -6,7 +6,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<MiniApps />} exact>
-                    <Route path="birthday_reminder" element={<BirthdayReminder />} />
+                    <Route path="p1" element={<BirthdayReminder />} />
                 </Route>
             </Routes>
         </Router>
