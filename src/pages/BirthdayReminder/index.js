@@ -1,6 +1,6 @@
 import { useState } from "react";
-import data from "./assets/data";
-import "./assets/index.css";
+import data from "./data";
+import "./index.css";
 import List from "./List";
 
 const BirthdayReminder = () => {
