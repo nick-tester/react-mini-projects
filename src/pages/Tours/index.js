@@ -23,6 +23,12 @@ const Tours = () => {
         setLoading(false);
     };
 
+    function removeTour(id) {
+        const newTours = tours.filter(tour => tour.id !== id);
+
+        setTours(newTours);
+    }
+
     useEffect(() => {
         fetchTours();
     }, []);
@@ -32,11 +38,15 @@ const Tours = () => {
             {loading ? <Loading /> : (
                 <section>
                     <div className={CSS.title}>
-                        <h2>our tours</h2>
-                        <div className={CSS.underline}></div>
+                        <h2>{tours.length !== 0 ? "our tours" : "no tours left"}</h2>
+                        {tours.length !== 0 ? (
+                            <div className={CSS.underline}></div>
+                        ) : (
+                            <button onClick={fetchTours} className="btn">refresh</button>
+                        )}
                     </div>
                     <div>
-                        {tours.map(tour => <Tour key={tour.id} {...tour} />)}
+                        {tours.map(tour => <Tour key={tour.id} {...tour} removeTour={removeTour} />)}
                     </div>
                 </section>
             )}
@@ -54,7 +64,8 @@ const Loading = () => {
 };
 
 // TOUR COMPONENT
-const Tour = ({ id, image, info, price, name }) => {
+const Tour = ({ id, image, info, price, name, removeTour }) => {
+    const [readMore, setReadMore] = useState(false);
     return (
         <article className={CSS.single__tour}>
             <img src={image} alt={name} />
@@ -63,8 +74,13 @@ const Tour = ({ id, image, info, price, name }) => {
                     <h4>{name}</h4>
                     <h4 className={CSS.tour__price}>£{price}</h4>
                 </div>
-                <p>{info}</p>
-                <button className={CSS.delete__btn}>not interested</button>
+                <p>
+                    {readMore ? info : info.substring(0, 200) + " ... "}
+                    <button onClick={() => setReadMore(!readMore)}>
+                        {readMore ? "read less" : "read more"}
+                    </button>
+                </p>
+                <button className={CSS.delete__btn} onClick={() => removeTour(id)}>not interested</button>
             </footer>
         </article>
     )
