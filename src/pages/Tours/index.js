@@ -10,7 +10,7 @@ const Tours = () => {
     const [tours, setTours] = useState([]);
 
     return (
-        <main className={CSS.tours}>
+        <main className={CSS.main}>
             {loading ? <Loading /> : (
                 <>
                     <h3>tours page</h3>
