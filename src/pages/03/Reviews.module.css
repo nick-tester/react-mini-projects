@@ -161,3 +161,7 @@ Reviews
   background: var(--clr-primary-5);
   color: var(--clr-primary-1);
 }
+.icon__githubsquare {
+  font-size: 3rem;
+  color: hsl(205, 86%, 17%);
+}
