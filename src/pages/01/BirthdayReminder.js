@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import data from "./data";
-import CSS from "./index.module.css";
+import CSS from "./BirthdayReminder.module.css";
 
 const BirthdayReminder = () => {
     const [people, setPeople] = useState(data);

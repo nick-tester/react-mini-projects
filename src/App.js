@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BirthdayReminder from "./pages/BirthdayReminder";
-import Tours from "./pages/Tours";
+import BirthdayReminder from "./pages/01/BirthdayReminder";
+import Tours from "./pages/02/Tours";
+import Reviews from "./pages/03/Reviews";
 
 const App = () => {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} exact />
-                <Route path="/p1" element={<BirthdayReminder />} />
-                <Route path="/p2" element={<Tours />} />
+                <Route path="/01" element={<BirthdayReminder />} />
+                <Route path="/02" element={<Tours />} />
+                <Route path="/03" element={<Reviews />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </Router>

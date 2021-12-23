@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import CSS from "./index.module.css";
+import CSS from "./Tours.module.css";
 
 const url = "https://course-api.com/react-tours-project";
 
