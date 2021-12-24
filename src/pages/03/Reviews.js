@@ -22,6 +22,34 @@ const Review = () => {
     const [index, setIndex] = useState(0);
     const { name, job, image, text, info } = people[index];
 
+    function checkNumber(num) {
+        return num > people.length - 1 ? 0 : num < 0 ? people.length - 1 : num;
+    }
+
+    function prevHandler() {
+        setIndex(index => {
+            let newIndex = index - 1;
+            return checkNumber(newIndex);
+        });
+    };
+
+    function nextHandler() {
+        setIndex(index => {
+            let newIndex = index + 1;
+            return checkNumber(newIndex);
+        });
+    };
+
+    function randomHandler() {
+        let randomNumber = Math.floor(Math.random() * people.length);
+
+        if (randomNumber === index) {
+            randomNumber = index + 1;
+        }
+
+        setIndex(checkNumber(randomNumber));
+    }
+
     return (
         <article className={CSS.review}>
             <div className={CSS.img_container}>
@@ -34,10 +62,10 @@ const Review = () => {
             <p className={CSS.job}>{job}</p>
             <p className={info}>{text}</p>
             <div className={CSS.button_container}>
-                <button className={CSS.prev_btn}><FaChevronLeft /></button>
-                <button className={CSS.next_btn}><FaChevronRight /></button>
+                <button className={CSS.prev_btn} onClick={prevHandler}><FaChevronLeft /></button>
+                <button className={CSS.next_btn} onClick={nextHandler}><FaChevronRight /></button>
             </div>
-            <button className={CSS.random_btn}>suprise me</button>
+            <button className={CSS.random_btn} onClick={randomHandler}>suprise me</button>
         </article>
     )
 };
