@@ -13,6 +13,7 @@ const App = () => {
                 <Route path="/03" element={<APP.Reviews />} />
                 <Route path="/04" element={<APP.Accordion />} />
                 <Route path="/05" element={<APP.Menu />} />
+                <Route path="/06" element={<APP.Tabs />} />
 
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
