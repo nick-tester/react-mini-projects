@@ -71,19 +71,19 @@ Jobs
 ===============
 */
 
-.jobs-center {
+.jobs_center {
   width: 80vw;
   margin: 0 auto;
   max-width: var(--max-width);
 }
-.btn-container {
+.btn_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 4rem;
   flex-wrap: wrap;
 }
-.job-btn {
+.job_btn {
   background: transparent;
   border-color: transparent;
   text-transform: capitalize;
@@ -96,19 +96,19 @@ Jobs
   line-height: 1;
   outline-color: var(--clr-primary-10);
 }
-.job-btn:hover {
+.job_btn:hover {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
 }
-.active-btn {
+.active_btn {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
 }
 
-.job-info h3 {
+.job_info h3 {
   font-weight: 400;
 }
-.job-info h4 {
+.job_info h4 {
   text-transform: uppercase;
   color: var(--clr-grey-5);
   background: var(--clr-grey-9);
@@ -116,41 +116,41 @@ Jobs
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius);
 }
-.job-date {
+.job_date {
   letter-spacing: var(--spacing);
 }
-.job-desc {
+.job_desc {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 2rem;
   align-items: center;
   margin-bottom: 1.25rem;
 }
-.job-desc p {
+.job_desc p {
   margin-bottom: 0;
   color: var(--clr-grey-3);
 }
-.job-icon {
+.job_icon {
   color: var(--clr-primary-5);
 }
 @media screen and (min-width: 992px) {
-  .jobs-center {
+  .jobs_center {
     width: 90vw;
     display: grid;
     grid-template-columns: 200px 1fr;
     column-gap: 4rem;
   }
-  .btn-container {
+  .btn_container {
     flex-direction: column;
     justify-content: flex-start;
   }
-  .job-btn {
+  .job_btn {
     margin-bottom: 1rem;
   }
-  .active-btn {
+  .active_btn {
     box-shadow: -2px 0 var(--clr-primary-5);
   }
-  .job-btn:hover {
+  .job_btn:hover {
     box-shadow: -2px 0 var(--clr-primary-5);
   }
 }
@@ -178,5 +178,5 @@ Jobs
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
-.center-btn {
+.center_btn {
 }
