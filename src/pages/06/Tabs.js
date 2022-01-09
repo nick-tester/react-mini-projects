@@ -38,6 +38,18 @@ const Tabs = () => {
                 <div className={CSS.underline}></div>
             </div>
             <div className={CSS.jobs_center}>
+                <div className={CSS.btn_container}>
+                    {jobs.map((item, index) => {
+                        return (
+                            <button
+                                key={item.id}
+                                onClick={() => setValue(index)}
+                                className={`${CSS.btn} ${CSS.job_btn} ${value === index && CSS.active_btn}`}>
+                                {item.company}
+                            </button>
+                        )
+                    })}
+                </div>
                 <article className={CSS.job_info}>
                     <h3>{title}</h3>
                     <h4>{company}</h4>

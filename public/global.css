@@ -133,7 +133,7 @@ p {
   }
 }
 
-.btn {
+/* .btn {
   background: var(--clr-primary-5);
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -145,4 +145,4 @@ p {
   cursor: pointer;
   margin-top: 2rem;
   font-size: 1.2rem;
-}
+} */

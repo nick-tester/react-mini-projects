@@ -4,6 +4,7 @@ import Reviews from "./03/Reviews";
 import Accordion from "./04/Accordion";
 import Menu from "./05/Menu";
 import Tabs from "./06/Tabs";
+import Slider from "./07/Slider";
 
 export {
     BirthdayReminder,
@@ -11,5 +12,6 @@ export {
     Reviews,
     Accordion,
     Menu,
-    Tabs
+    Tabs,
+    Slider
 }

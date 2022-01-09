@@ -14,6 +14,7 @@ const App = () => {
                 <Route path="/04" element={<APP.Accordion />} />
                 <Route path="/05" element={<APP.Menu />} />
                 <Route path="/06" element={<APP.Tabs />} />
+                <Route path="/07" element={<APP.Slider />} />
 
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
