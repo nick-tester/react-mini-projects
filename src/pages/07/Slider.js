@@ -9,6 +9,22 @@ const Slider = () => {
     const [people, setPeople] = useState(data);
     const [index, setIndex] = useState(0);
 
+    function prevButtonHandler() {
+        if (index === 0) {
+            setIndex(people.length - 1)
+        } else {
+            setIndex(index - 1)
+        }
+    };
+
+    function nextButtonHandler() {
+        if (index === people.length - 1) {
+            setIndex(0)
+        } else {
+            setIndex(index + 1)
+        }
+    };
+
     return (
         <section className={CSS.section}>
             <div className={CSS.title}>
@@ -17,10 +33,21 @@ const Slider = () => {
                 </h2>
             </div>
             <div className={CSS.section_center}>
-                {people.map((person, index) => {
+                {people.map((person, peopleMapIndex) => {
+                    let position = CSS.nextSlide;
+
+                    if (peopleMapIndex === index) {
+                        position = CSS.activeSlide;
+                    }
+
+                    if (peopleMapIndex === index - 1 || (index === 0 && peopleMapIndex === people.length - 1)) {
+                        position = CSS.lastSlide;
+                    }
+
                     const { id, image, name, title, quote } = person;
+
                     return (
-                        <article key={id}>
+                        <article key={id} className={`${CSS.article} ${position}`}>
                             <img src={image} alt={name} className={CSS.person_img} />
                             <h4>{name}</h4>
                             <p className={CSS.title}>{title}</p>
@@ -29,10 +56,10 @@ const Slider = () => {
                         </article>
                     )
                 })}
-                <button className={CSS.prev}>
+                <button className={CSS.prev} onClick={prevButtonHandler}>
                     <FaChevronLeft />
                 </button>
-                <button className={CSS.next}>
+                <button className={CSS.next} onClick={nextButtonHandler}>
                     <FaChevronRight />
                 </button>
             </div>
