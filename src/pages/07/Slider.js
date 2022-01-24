@@ -9,21 +9,16 @@ const Slider = () => {
     const [people, setPeople] = useState(data);
     const [index, setIndex] = useState(0);
 
-    function prevButtonHandler() {
-        if (index === 0) {
-            setIndex(people.length - 1)
-        } else {
-            setIndex(index - 1)
+    useEffect(() => {
+        let lastIndex = people.length - 1;
+        if (index < 0) {
+            setIndex(lastIndex);
         }
-    };
 
-    function nextButtonHandler() {
-        if (index === people.length - 1) {
-            setIndex(0)
-        } else {
-            setIndex(index + 1)
+        if (index > lastIndex) {
+            setIndex(0);
         }
-    };
+    }, [index, people]);
 
     return (
         <section className={CSS.section}>
@@ -56,10 +51,10 @@ const Slider = () => {
                         </article>
                     )
                 })}
-                <button className={CSS.prev} onClick={prevButtonHandler}>
+                <button className={CSS.prev} onClick={() => setIndex(index - 1)}>
                     <FaChevronLeft />
                 </button>
-                <button className={CSS.next} onClick={nextButtonHandler}>
+                <button className={CSS.next} onClick={() => setIndex(index + 1)}>
                     <FaChevronRight />
                 </button>
             </div>
