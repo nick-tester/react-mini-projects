@@ -6,6 +6,7 @@ import Menu from "./05/Menu";
 import Tabs from "./06/Tabs";
 import Slider from "./07/Slider";
 import LoremGen from "./08/LoremIpsumGenerator";
+import ColorGenerator from "./09/ColorGenerator";
 
 export {
     BirthdayReminder,
@@ -15,5 +16,6 @@ export {
     Menu,
     Tabs,
     Slider,
-    LoremGen
+    LoremGen,
+    ColorGenerator
 }
