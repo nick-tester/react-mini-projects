@@ -62,8 +62,11 @@ Color Generator
   margin-bottom: 0;
   margin-right: 2rem;
 }
-
+form.form {
+  display: flex;
+}
 input {
+  width: auto;
   border-color: transparent;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
@@ -105,18 +108,18 @@ input.error {
   font-size: 1rem;
   text-transform: none;
 }
-.percent-value {
+.percent_value {
   margin-bottom: 0;
   color: var(--clr-grey-1);
 }
-.color-value {
+.color_value {
   color: var(--clr-grey-1);
   margin-bottom: 0;
 }
-.color-light .color-value {
+.color_light .color_value {
   color: var(--clr-white);
 }
-.color-light .percent-value {
+.color_light .percent_value {
   color: var(--clr-white);
 }
 
